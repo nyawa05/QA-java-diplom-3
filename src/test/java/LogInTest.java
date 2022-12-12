@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import service.UserGenerator;
 import service.UserRequests;
 import service.constants.Links;
-import service.pageObject.*;
+import service.pageobjects.*;
 import service.pojo.User;
 
 @RunWith(Parameterized.class)

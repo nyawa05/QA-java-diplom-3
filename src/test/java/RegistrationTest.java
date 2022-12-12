@@ -11,10 +11,10 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import service.UserGenerator;
 import service.UserRequests;
 import service.constants.Links;
-import service.pageObject.MainPageStellarBurgers;
-import service.pageObject.PersonalAreaProfilePage;
-import service.pageObject.PersonalAreaSignInPage;
-import service.pageObject.RegistrationPage;
+import service.pageobjects.MainPageStellarBurgers;
+import service.pageobjects.PersonalAreaProfilePage;
+import service.pageobjects.PersonalAreaSignInPage;
+import service.pageobjects.RegistrationPage;
 import service.pojo.User;
 
 @RunWith(Parameterized.class)

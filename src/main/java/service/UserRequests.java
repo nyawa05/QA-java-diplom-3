@@ -1,5 +1,6 @@
 package service;
 
+import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import service.pojo.User;
 import service.pojo.UserAuth;
@@ -10,7 +11,7 @@ import static service.constants.Api.*;
 
 public class UserRequests {
     public Response createUser(User user) {
-        return given()
+        return RestAssured.given()
                 .spec(REQUEST_SPECIFICATION)
                 .and()
                 .body(user)
@@ -22,7 +23,7 @@ public class UserRequests {
         UserAuth userAuth = authUser(user)
                 .getBody()
                 .as(UserAuth.class);
-        given()
+        RestAssured.given()
                 .spec(REQUEST_SPECIFICATION)
                 .auth().oauth2(userAuth.getAccessToken())
                 .delete(API_EDIT_USER);
@@ -31,7 +32,7 @@ public class UserRequests {
 
     public Response authUser(User user) {
         UserAuthCredentials userAuth = new UserAuthCredentials(user.getEmail(), user.getPassword());
-        return given()
+        return RestAssured.given()
                 .spec(REQUEST_SPECIFICATION)
                 .and()
                 .body(userAuth)
